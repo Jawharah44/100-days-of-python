@@ -1,22 +1,12 @@
-class User:
-    def __init__(self, user_id, username):
-        self.id = user_id
-        self.username = username
-        self.followers = 0
-        self.following = 0 
-        
-    def follow(self,user):
-        user.followers += 1
-        self.following += 1
-        
-user_1 = User("001","Jawharah")
-user_2 = User("002", "Gigi")
+from question_model import Question
+from data import question_data
+from quiz_brain import QuizBrain
 
-user_1.follow(user_2)
+question_bank=[]
 
-print(user_2.followers)
-print(user_2.following)
-
-
-print(user_1.followers)
-print(user_1.following)
+for i in question_data:
+    question = Question(i['text'],i['answer'])
+    question_bank.append(question)
+    
+quiz = QuizBrain(question_bank)
+quiz.next_question()
