@@ -1,17 +1,9 @@
-# with open("day25/weather_data.csv") as weather_info:
-#     data = weather_info.readlines()
+import turtle 
 
-# import csv
+screen = turtle.Screen()
+screen.title("U.S States Game")
+image = "day25/blank_states_img.gif"
+turtle.addshape(image)
+turtle.shape(image)
 
-# with open("day25/weather_data.csv") as weather_info:
-#     data = csv.reader(weather_info)
-#     temperatures = []
-#     for row in data:
-#         if row[1] != "temp":
-#             temperatures.append(int(row[1]))
-#         print(row)
-#     print(temperatures)
-
-import pandas as pd
-data = pd.read_csv("day25/weather_data.csv")
-print(data["temp"])
+answer_state = screen.textinput(title= "Guess the State", prompt= "What's another state's name?")
