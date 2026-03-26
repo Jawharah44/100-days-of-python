@@ -20,6 +20,9 @@ LONG_BREAK_MIN = 20
 window = Tk()
 window.title("Pomodoro") 
 window.config(padx=100, pady= 50,bg=YELLOW)
+def say_something(thing):
+    print(thing)
+window.after(1000,say_something,"Hello")
 
 title_lable = Label(text="Timer", fg=GREEN, bg=YELLOW,font=(FONT_NAME, 50))
 title_lable.grid(column=1,row=0)
